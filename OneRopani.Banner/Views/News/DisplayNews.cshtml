@@ -1,0 +1,24 @@
+﻿@model IEnumerable<OneRopani.Banner.Models.News>
+
+@{
+    ViewBag.Title = "DisplayNews";
+}
+
+<h2>List of News</h2>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-sm-4">
+            @Html.DisplayFor(modelItem => item.Title)
+        </div>
+        <div class="col-sm-2">
+            @Html.DisplayFor(modelItem => item.AddedDate)
+        </div>
+        <div class="col-sm-6">
+            @*@Html.Raw(item.NewsContent)*@
+            @Html.DisplayFor(modelItem => item.NewsContent)
+        </div>
+        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+    }
+</div>

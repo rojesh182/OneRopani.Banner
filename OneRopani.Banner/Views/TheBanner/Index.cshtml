@@ -1,0 +1,18 @@
+﻿@model IEnumerable<OneRopani.Banner.Models.TheBanner>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<span style="color:green">@ViewBag.Message</span>
+
+
+<div>
+@foreach (var item in Model)
+{
+    <a href="@Html.Raw(item.BannerUrl)">
+        <img class="img-responsive" src="@Url.Content(item.Path)" width="975" height="90" />
+    </a>
+    <hr />
+}
+</div>
